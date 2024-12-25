@@ -66,7 +66,7 @@ function move(path, folder)
     local sep = string.match(path, "^.*()/")
     local root = string.sub(path, 1, sep) .. folder
     local file_name = string.sub(path, sep + 1, string.len(path))
-    local game_filename = get_running_game_title() .. "-" .. file_name
+    local game_filename = folder .. "-" .. file_name
     local adjusted_path = root .. "\\" .. game_filename
     if obs.os_file_exists(root) == false then
         obs.os_mkdir(root)
